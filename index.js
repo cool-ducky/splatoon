@@ -45,7 +45,7 @@ const mapUpdate = async () => {
   });
   const now = new Date()
   const endTime = data.regular[0].end_time
-  const diff = endTime - (Math.round(now.getTime() / 1000)) + 180000
+  const diff = endTime - (Math.round(now.getTime() / 1000)) + 180
   setTimeout(mapUpdate, diff * 1000);
 };
 
