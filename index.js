@@ -36,13 +36,13 @@ const mapUpdate = async () => {
     };
     embeds.push(embed);
   }
-  /*axios({
+  axios({
     method: "POST",
     url: process.env.webhook,
     data: {
       embeds,
     },
-  });*/
+  });
   const now = new Date()
   const endTime = data.regular[0].end_time
   const diff = endTime - Math.round(now.getTime() / 1000)
