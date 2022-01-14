@@ -20,7 +20,7 @@ const mapUpdate = async () => {
   for (const mode in data) {
     let battle = data[mode];
     let prettyEmbed = pretty[battle[0].game_mode.name];
-    let nextBattle = battle[1].game_mode.name !== "Regular Battle" ? `(${battle[0].rule.name})`: ""
+    let nextBattle = battle[1].game_mode.name !== "Regular Battle" ? `(${battle[1].rule.name})`: ""
     let embed = {
       title: `${prettyEmbed[1]} ${battle[0].rule.name} (${battle[0].game_mode.name})`,
       description: `
@@ -45,7 +45,7 @@ const mapUpdate = async () => {
   });
   const now = new Date()
   const endTime = data.regular[0].end_time
-  const diff = endTime - Math.round(now.getTime() / 1000)
+  const diff = endTime - (Math.round(now.getTime() / 1000)) + 180000
   setTimeout(mapUpdate, diff * 1000);
 };
 
